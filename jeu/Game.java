@@ -1,8 +1,8 @@
 package jeu;
 
-public class Jeu {
+public class Game {
     public static void main (String[] args){
-        System.out.println("Hello world");
+        
     }
     
 }
