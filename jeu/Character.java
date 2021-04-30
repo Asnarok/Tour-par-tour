@@ -79,7 +79,7 @@ public class Character {
     public boolean isWeakness(int type) {
         int i = 0;
         
-        while(weaknesses[i] != type)i++;
+        while(weaknesses[i] != type && i < weaknesses.length)i++;
         
         return i < weaknesses.length;
     }
