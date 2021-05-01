@@ -2,12 +2,14 @@ package jeu;
 public class Character {
     
     //types
-    public static final int ELECTRIC = 0, COSMOS = 1, INFORMATIC = 2, GEOMETRIC = 3, MATTER = 4, RADIO = 5;
+    public static enum Type {
+        ELECTRIC, COSMOS, INFORMATIC, GEOMETRIC, MATTER, RADIO;
+    }
     public static final int HP_CONST = 100;
 
     private String name;
     private float HP;
-    private int[] types;
+    private Type[] types;
     private int[] weaknesses; //sera rempli des int des types qui seront sa faiblesse
 
     public Character(String name, float HP, int[] types, int[] weaknesses) { // constructeur pour des HP différents
