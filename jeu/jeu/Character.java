@@ -111,5 +111,5 @@ public class Character {
         System.out.println("Attaques disponibles: ");
     }
 
-
+    
 }
