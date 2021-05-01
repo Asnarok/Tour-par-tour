@@ -5,22 +5,22 @@ public class Character {
     public static enum Type {
         ELECTRIC, COSMOS, INFORMATIC, GEOMETRIC, MATTER, RADIO;
     }
-    
+
     public static final int HP_CONST = 100;
 
     private String name;
     private float HP;
     private Type[] types;
-    private int[] weaknesses; //sera rempli des int des types qui seront sa faiblesse
+    private Type[] weaknesses; //sera rempli des int des types qui seront sa faiblesse
 
-    public Character(String name, float HP, int[] types, int[] weaknesses) { // constructeur pour des HP différents
+    public Character(String name, float HP, Type[] types, Type[] weaknesses) { // constructeur pour des HP différents
         this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
         setHP(HP);
         this.types = types; //pareil
         this.weaknesses = weaknesses; //idem
     }
 
-    public Character(String name, int[] types, int[] weaknesses) { // constructeur pour des HP constants
+    public Character(String name, Type[] types, Type[] weaknesses) { // constructeur pour des HP constants
         this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
         setHP(HP_CONST);
         this.types = types; //pareil
@@ -70,7 +70,7 @@ public class Character {
     /**
      * @return the type of the character
      */
-    public int[] getTypes() {
+    public Type[] getTypes() {
         return types;
     }
 
@@ -79,7 +79,7 @@ public class Character {
         return weaknesses;
     }
 
-    public boolean isWeakness(int type) {
+    public boolean isWeakness(Type type) {
         int i = 0;
         
         while(weaknesses[i] != type && i < weaknesses.length)i++;
