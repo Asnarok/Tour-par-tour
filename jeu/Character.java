@@ -2,8 +2,8 @@ package jeu;
 public class Character {
     
     //types
-    public static final int ELECTRIC = 0, COSMOS = 1, INFORMATIC = 2, GEOMETRIC = 3, MATTER = 4, RADIO = 5;
-    public static final int HP_CONST = 100;
+    private static final int ELECTRIC = 0, COSMOS = 1, INFORMATIC = 2, GEOMETRIC = 3, MATTER = 4, RADIO = 5;
+    private static final int HP_CONST = 100;
 
     private String name;
     private float HP;
