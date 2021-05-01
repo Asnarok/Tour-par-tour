@@ -1,6 +1,6 @@
 package jeu;
 
-public static enum Type {
+public enum Type {
     ELECTRIC, COSMOS, INFORMATIC, 
     GEOMETRIC, MATTER, RADIO, 
     MATH, GEOMETRY, GRAVITATION, 
@@ -12,7 +12,6 @@ public class Character {
     //types
     public static final int HP_CONST = 100;
 
-
     private String name;
     private float HP;
     private Type[] types;
@@ -20,6 +19,8 @@ public class Character {
 
     private String[] attacksNames;
     private Type[] attacksTypes;
+
+    private int heals = 2; //nombre de potions 
 
     public Character(String name, float HP, Type[] types, Type[] weaknesses, String[] attacksNames, Type[] attacksTypes) { // constructeur pour des HP différents
         this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
@@ -30,11 +31,13 @@ public class Character {
         this.attacksTypes = attacksTypes;//"
     }
 
-    public Character(String name, Type[] types, Type[] weaknesses) { // constructeur pour des HP constants
+    public Character(String name, Type[] types, Type[] weaknesses, String[] attacksNames, Type[] attacksTypes) { // constructeur pour des HP constants
         this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
         setHP(HP_CONST);
-        this.types = types; //pareil
-        this.weaknesses = weaknesses; //idem
+        this.types = types; //"
+        this.weaknesses = weaknesses; //"
+        this.attacksNames = attacksNames;//"
+        this.attacksTypes = attacksTypes;//"
     }
 
     /**
@@ -100,6 +103,10 @@ public class Character {
         //stuff to do
 
         return -1;
+    }
+
+    public void heal() {
+        //stuff to do
     }
 
     public void displayHP() {
