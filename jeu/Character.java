@@ -1,7 +1,10 @@
 package jeu;
 
 public static enum Type {
-    ELECTRIC, COSMOS, INFORMATIC, GEOMETRIC, MATTER, RADIO, MATH, GEOMETRY, GRAVITATION, MEDICAL, QUANTIC;
+    ELECTRIC, COSMOS, INFORMATIC, 
+    GEOMETRIC, MATTER, RADIO, 
+    MATH, GEOMETRY, GRAVITATION, 
+    MEDICAL, QUANTIC;
 }
 
 public class Character {
@@ -13,13 +16,18 @@ public class Character {
     private String name;
     private float HP;
     private Type[] types;
-    private Type[] weaknesses; //sera rempli des int des types qui seront sa faiblesse
+    private Type[] weaknesses; //sera rempli des types qui seront sa faiblesse
 
-    public Character(String name, float HP, Type[] types, Type[] weaknesses) { // constructeur pour des HP différents
+    private String[] attacksNames;
+    private Type[] attacksTypes;
+
+    public Character(String name, float HP, Type[] types, Type[] weaknesses, String[] attacksNames, Type[] attacksTypes) { // constructeur pour des HP différents
         this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
         setHP(HP);
-        this.types = types; //pareil
-        this.weaknesses = weaknesses; //idem
+        this.types = types; //"
+        this.weaknesses = weaknesses; //"
+        this.attacksNames = attacksNames;//"
+        this.attacksTypes = attacksTypes;//"
     }
 
     public Character(String name, Type[] types, Type[] weaknesses) { // constructeur pour des HP constants
@@ -92,6 +100,14 @@ public class Character {
         //stuff to do
 
         return -1;
+    }
+
+    public void displayHP() {
+        System.out.println("Votre "+name+" a encore "+HP+" / "+HP_CONST+" PV");
+    }
+
+    public void displayAttacks() {
+        System.out.println("Attaques disponibles: ");
     }
 
 
