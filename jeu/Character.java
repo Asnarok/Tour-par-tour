@@ -1,12 +1,14 @@
 package jeu;
+
+public static enum Type {
+    ELECTRIC, COSMOS, INFORMATIC, GEOMETRIC, MATTER, RADIO;
+}
+
 public class Character {
     
     //types
     public static final int HP_CONST = 100;
 
-    public static enum Type {
-        ELECTRIC, COSMOS, INFORMATIC, GEOMETRIC, MATTER, RADIO;
-    }
 
     private String name;
     private float HP;
