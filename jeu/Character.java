@@ -37,7 +37,6 @@ public class Character {
         return name;
     }
 
-
     /**
      * @return the health points of the character
      */
@@ -76,7 +75,6 @@ public class Character {
         return types;
     }
 
-
     public Type[] getWeaknesses() {
         return weaknesses;
     }
@@ -87,6 +85,13 @@ public class Character {
         while(weaknesses[i] != types[i] && i < weaknesses.length)i++;
         
         return i < weaknesses.length;
+    }
+
+    public int takeDamage(Type attackType) {
+
+        //stuff to do
+
+        return -1;
     }
 
 
