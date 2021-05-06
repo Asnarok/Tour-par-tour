@@ -105,7 +105,7 @@ public class Character {
     public void displayAttacks() {
         System.out.println("Attaques disponibles: \n"  + 
         "- " + attacksNames[0] + " de type " + attacksTypes[0] + 
-        "\n- " + attacksNames[1] + " de type " + attacksTypes[1] );
+        "\n- " + attacksNames[1] + " de type " + attacksTypes[1]);
     }
 
     

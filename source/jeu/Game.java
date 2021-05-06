@@ -63,13 +63,7 @@ public class Game {
 
 
     public static void main (String[] args){
-<<<<<<< HEAD
         newton.displayAttacks();
-=======
-
-        
-        
->>>>>>> 30f8f0ed17e9368ceb57bc55fd93c9d96849eeae
     }
     
 }
