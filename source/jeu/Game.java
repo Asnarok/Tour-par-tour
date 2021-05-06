@@ -25,10 +25,18 @@ public class Game {
                                                         new Type[]{Type.RADIO, Type.MATTER},
                                                         new String[]{"Impulsion gamma", " "},
                                                         new Type[]{Type.GEOMETRIC, Type.MEDICAL});
-    public static final Character vinci = new Character("L. de Vinci", new Type[]{Type.MATH,}, 
-                                                        new Type[]{Type.QUANTIC, Type.COSMOS},
-                                                        new String[]{"Développement binomial", "Superpesanteur"},
+    public static final Character vinci = new Character("L. de Vinci", new Type[]{Type.MATH,Type.GEOMETRIC, Type.MEDICAL, Type.MATTER}, 
+                                                        new Type[]{Type.MEDICAL, Type.GRAVITATION},
+                                                        new String[]{" ", " "},
                                                         new Type[]{Type.MATH, Type.GRAVITATION});
+    public static final Character bohr = new Character("N. Bohr", new Type[]{Type.MATTER}, 
+                                                        new Type[]{Type.QUANTIC, Type.MATTER},
+                                                        new String[]{"Charge photonique", " "},
+                                                        new Type[]{Type.RADIO, Type.ELECTRIC});
+    public static final Character turing = new Character("A. Turing", new Type[]{Type.INFORMATIC}, 
+                                                        new Type[]{Type.INFORMATIC, Type.MATH},
+                                                        new String[]{"Cyber attaque", " "},
+                                                        new Type[]{Type.COSMOS, Type.MEDICAL});
 
     public static final Character hawking = new Character("S. Hawking", new Type[]{Type.COSMOS},
                                                         new Type[]{Type.COSMOS, Type.INFORMATIC},
