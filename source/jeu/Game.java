@@ -30,6 +30,10 @@ public class Game {
                                                         new String[]{"Développement binomial", "Superpesanteur"},
                                                         new Type[]{Type.MATH, Type.GRAVITATION});
 
+    public static final Character hawking = new Character("S. Hawking", new Type[]{Type.COSMOS},
+                                                        new Type[]{});
+
+
     public static void main (String[] args){
         
     }
