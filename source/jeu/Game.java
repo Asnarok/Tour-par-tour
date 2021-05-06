@@ -1,4 +1,4 @@
-package jeu;
+
 
 public class Game {
 
@@ -55,7 +55,7 @@ public class Game {
 
 
     public static void main (String[] args){
-        
+        newton.displayAttacks();
     }
     
 }

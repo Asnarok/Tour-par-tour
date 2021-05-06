@@ -1,4 +1,4 @@
-package jeu;
+
 
 
 public class Character {
@@ -16,18 +16,9 @@ public class Character {
 
     private int heals = 2; //nombre de potions 
 
-    public Character(String name, float HP, Type[] types, Type[] attacksTypes, String[] attacksNames, Type[] weaknesses) { // constructeur pour des HP différents
-        this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
-        setHP(HP);
-        this.types = types; //"
-        this.weaknesses = weaknesses; //"
-        this.attacksNames = attacksNames;//"
-        this.attacksTypes = attacksTypes;//"
-    }
-
     public Character(String name, Type[] types,  Type[] attacksTypes, String[] attacksNames,Type[] weaknesses) { // constructeur pour des HP constants
         this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
-        setHP(HP_CONST);
+        this.HP = HP_CONST;
         this.types = types; //"
         this.weaknesses = weaknesses; //"
         this.attacksNames = attacksNames;//"
@@ -47,14 +38,6 @@ public class Character {
      */
     public float getHP() {
         return HP;
-    }
-
-    /**
-     * 
-     * @param HP the new health points of the character
-     */
-    public void setHP(float HP) {
-        this.HP = HP;
     }
 
     /**
@@ -84,13 +67,25 @@ public class Character {
         return weaknesses;
     }
 
-    public boolean isWeakness(Type[] types) {
+    /**
+     * 
+     */
+    public boolean isWeakness(Type attackType) {
         int i = 0;
         
-        while(weaknesses[i] != types[i] && i < weaknesses.length)i++;
+        while(weaknesses[i] != attackType && i < weaknesses.length)i++;
         
         return i < weaknesses.length;
     }
+
+    public boolean isResistance(Type attackType) {
+        int i = 0;
+        
+        while(weaknesses[i] == attackType && i < weaknesses.length)i++;
+        
+        return i < weaknesses.length;
+    }
+
 
     public int takeDamage(Type attackType) {
 
