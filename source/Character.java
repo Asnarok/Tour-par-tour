@@ -125,8 +125,8 @@ public class Character {
 
     public void displayAttacks() {
         System.out.println("Attaques disponibles: \n"  + 
-        "- " + attacksNames[0] + " de type " + attacksTypes[0] + 
-        "\n- " + attacksNames[1] + " de type " + attacksTypes[1] +
+        "1) " + attacksNames[0] + " de type " + attacksTypes[0] + 
+        "\n2) " + attacksNames[1] + " de type " + attacksTypes[1] +
         "\n 3) Potions de soins (" + heals + ")");
     }
 
