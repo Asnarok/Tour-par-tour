@@ -83,9 +83,11 @@ public class Character {
 
         float damage;
         if(isWeakness(attackType)){
+            System.out.println("C'est super efficace !");
             damage = randomFloat(20, 30);
         }
         else if(isResistance(attackType)){
+            System.out.println("Ce n'est pas très efficace...");
             damage = randomFloat(1, 10);
         }
         else damage = randomFloat(10, 20);
@@ -93,6 +95,7 @@ public class Character {
         if(HP-damage > 0)HP-=damage;
         else HP = 0;
 
+        System.out.println("Le "+name+" ennemi a subi "+damage+" points de dégâts.");
         return damage;
     }
 

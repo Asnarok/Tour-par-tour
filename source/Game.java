@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 
 public class Game {
 
@@ -62,9 +62,15 @@ public class Game {
                                                     
 
 
-    public static void main (String[] args){
-        System.out.println(Character.randomFloat(10, 20));
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+
+        
+
+        System.out.println("Joueur 1, veuillez sélectionner votre joueur")
+
     }
+
 
     
 }
