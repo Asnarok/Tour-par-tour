@@ -97,15 +97,23 @@ public class Character {
     }
 
     public void heal() {
-        if (HP < HP_CONST - 20 ){ 
+        if (heals !=0){
+           if (HP < HP_CONST - 20 ){ 
             HP += 20; 
         } else { 
             HP = HP_CONST; 
         }
+        System.out.print("Votre " + name + " s'est soigné. ");
+        displayHP();
+        heals --;
+        } else {
+            System.out.println("Votre " + name + " n'a plus de potions de soins !");
+        }
+        
     }
 
     public void displayHP() {
-        System.out.println("Votre " + name + " a encore " + HP + " / "+ HP_CONST + " PV");
+        System.out.println("Votre " + name + " a encore " + HP + " / "+ HP_CONST + " PV et il lui reste " + heals + "potions de soins");
     }
 
     public void displayAttacks() {
