@@ -126,4 +126,5 @@ public class Character {
         return (int)(Math.random() * ((max-min+1)*2))/2f+min;
     }
     
+    
 }
