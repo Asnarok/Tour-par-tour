@@ -6,7 +6,7 @@ public class Game {
 
     //personnages
     public static final Character newton = new Character("I. Newton", new Type[]{Type.GRAVITATION}, 
-                                                        new Type[]{Type.MATH, Type.GRAVITATION
+                                                        new Type[]{Type.MATH, Type.GRAVITATION},
                                                         new String[]{"Développement binomial", "Superpesanteur"},
                                                         new Type[]{Type.QUANTIC, Type.COSMOS});
     public static final Character pythagore = new Character("Pythagore", new Type[]{Type.GEOMETRIC}, 
@@ -31,7 +31,19 @@ public class Game {
                                                         new Type[]{Type.MATH, Type.GRAVITATION});
 
     public static final Character hawking = new Character("S. Hawking", new Type[]{Type.COSMOS},
-                                                        new Type[]{});
+                                                        new Type[]{Type.COSMOS, Type.INFORMATIC},
+                                                        new String[]{"Inflation", "Frappe bionique"},
+                                                        new Type[]{Type.MEDICAL, Type.MATTER});
+    
+    public static final Character schrodinger = new Character("E. Schrödinger", new Type[]{Type.RADIO, Type.MATTER},
+                                                            new Type[]{Type.QUANTIC, Type.ELECTRIC},
+                                                            new String[]{"Intrication quantique", ""},
+                                                            new Type[]{Type.GRAVITATION, Type.RADIO});
+    public static final Character pasteur = new Character("L. Pasteur", new Type[]{Type.MEDICAL},
+                                                            new Type[]{Type.MEDICAL, Type.MATTER},
+                                                            new String[]{"Vaccination", "Get acide"},
+                                                            new Type[]{Type.MATH, Type.GRAVITATION});
+                                                    
 
 
     public static void main (String[] args){
