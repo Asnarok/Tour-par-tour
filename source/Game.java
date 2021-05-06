@@ -61,8 +61,11 @@ public class Game {
                                                             new Type[]{Type.MEDICAL, Type.MATTER},
                                                             new String[]{"Vaccination", "Get acide"},
                                                             new Type[]{Type.MATH, Type.GRAVITATION});
-                                                    
-    public static List<Character> characters;
+
+
+    
+    public static Character playingChar; //joueur en train de jouer
+    public static Character idleChar; //joueur inactif
 
     public static void main(String[] args){
 
@@ -70,6 +73,51 @@ public class Game {
         
         chooseCharacter(sc);
 
+        playingChar = player2; //comme on inverse au début de chaque round, le joueur 1 commencera en 1er
+        idleChar = player1;
+        
+        while(player1.isAlive() && player2.isAlive()) { //le jeu continue
+            //chaque tour l'autre joueur joue
+            if(playingChar == player2){
+                playingChar = player1; 
+                idleChar = player2;
+            }
+            else {
+                playingChar = player2;
+                idleChar = player1;
+            } 
+
+            int attack = chooseAttack(sc);
+
+            if(attack < 2){ //dégâts
+                Type attackType = playingChar.getTypes()[attack];
+                idleChar.takeDamage(attackType);
+                idleChar.displayHP();
+                
+            }else { //potion
+                playingChar.heal();
+            }
+            
+        }
+
+    }
+
+    public static int chooseAttack(Scanner sc) {
+        println("Choisissez une attaque");
+        player1.displayAttacks();
+        int i = 0;
+        while(i < 1 || i > 3){
+            i = sc.nextInt();
+            if(i < 1 || i > 3) println("Attaque invalide.");
+        }
+        i--;
+        println(playingChar.getName()+" attaque "+ playingChar.getAttackNames()[i]+" !");
+        return i;
+    }
+
+    public static void println(String s) {
+        if(playingChar == player1)System.out.println("(Joueur 1) "+s);
+        else System.out.println("(Joueur 2) "+s);
     }
 
     public static void chooseCharacter(Scanner sc) {
@@ -79,7 +127,7 @@ public class Game {
          * correspondant
          */
 
-        characters = new ArrayList<Character>(); //on utilise une liste pour itérer
+        List<Character> characters = new ArrayList<Character>(); //on utilise une liste pour itérer
         
         characters.add(newton);
         characters.add(pythagore);
