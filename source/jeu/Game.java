@@ -6,7 +6,7 @@ public class Game {
 
     //personnages
     public static final Character newton = new Character("I. Newton", new Type[]{Type.GRAVITATION}, 
-                                                        new Type[]{Type.MATH, Type.GRAVITATION
+                                                        new Type[]{Type.MATH, Type.GRAVITATION},
                                                         new String[]{"Développement binomial", "Superpesanteur"},
                                                         new Type[]{Type.QUANTIC, Type.COSMOS});
     public static final Character pythagore = new Character("Pythagore", new Type[]{Type.GEOMETRIC}, 

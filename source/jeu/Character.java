@@ -16,7 +16,7 @@ public class Character {
 
     private int heals = 2; //nombre de potions 
 
-    public Character(String name, float HP, Type[] types, Type[] weaknesses, String[] attacksNames, Type[] attacksTypes) { // constructeur pour des HP différents
+    public Character(String name, float HP, Type[] types, Type[] attacksTypes, String[] attacksNames, Type[] weaknesses) { // constructeur pour des HP différents
         this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
         setHP(HP);
         this.types = types; //"
@@ -25,7 +25,7 @@ public class Character {
         this.attacksTypes = attacksTypes;//"
     }
 
-    public Character(String name, Type[] types, String[] attacksNames, Type[] attacksTypes, Type[] weaknesses) { // constructeur pour des HP constants
+    public Character(String name, Type[] types,  Type[] attacksTypes, String[] attacksNames,Type[] weaknesses) { // constructeur pour des HP constants
         this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
         setHP(HP_CONST);
         this.types = types; //"
