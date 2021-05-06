@@ -63,7 +63,8 @@ public class Game {
 
 
     public static void main (String[] args){
-        newton.displayAttacks();
+        System.out.println(Character.randomFloat(10, 20));
     }
+
     
 }

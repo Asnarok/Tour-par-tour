@@ -41,14 +41,6 @@ public class Character {
     }
 
     /**
-     * @param loss the health points to subtract 
-     */
-    public void loseHP(float loss) {
-        HP-=loss;
-        if(HP < 0) HP = 0;
-    }
-
-    /**
      * 
      * @return a boolean indicating whether the character is alive or not
      */
@@ -87,11 +79,21 @@ public class Character {
     }
 
 
-    public int takeDamage(Type attackType) {
+    public float takeDamage(Type attackType) {
 
-        //stuff to do
+        float damage;
+        if(isWeakness(attackType)){
+            damage = randomFloat(20, 30);
+        }
+        else if(isResistance(attackType)){
+            damage = randomFloat(1, 10);
+        }
+        else damage = randomFloat(10, 20);
 
-        return -1;
+        if(HP-damage > 0)HP-=damage;
+        else HP = 0;
+
+        return damage;
     }
 
     public void heal() {
@@ -112,5 +114,8 @@ public class Character {
         "\n- " + attacksNames[1] + " de type " + attacksTypes[1]);
     }
 
+    public static float randomFloat(int min, int max) {
+        return (int)(Math.random() * ((max-min+1)*2))/2f+min;
+    }
     
 }
