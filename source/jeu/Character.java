@@ -100,18 +100,20 @@ public class Character {
     }
 
     public void heal() {
-        //stuff to do
+        if (HP < HP_CONST - 20 ){ 
+            HP += 20; 
+        } else { 
+            HP = HP_CONST; 
+        }
     }
 
     public void displayHP() {
-        System.out.println("Votre "+name+" a encore "+HP+" / "+HP_CONST+" PV");
+        System.out.println("Votre " + name + " a encore " + HP + " / "+ HP_CONST + " PV");
     }
 
     public void displayAttacks() {
         System.out.println("Attaques disponibles: \n"  + 
         "- " + attacksNames[0] + " de type " + attacksTypes[0] + 
-        "\n- " + attacksNames[1] + " de type " + attacksTypes[1] );
-    }
-
-    
+        "\n- " + attacksNames[1] + " de type " + attacksTypes[1]);
+    } 
 }
