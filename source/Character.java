@@ -128,6 +128,12 @@ public class Character {
     public static float randomFloat(int min, int max) {
         return (int)(Math.random() * ((max-min+1)*2))/2f+min;
     }
+
+    public void displayCharacter() {
+        System.out.println(name);
+        displayAttacks();
+        System.out.println();
+    }
     
     
 }

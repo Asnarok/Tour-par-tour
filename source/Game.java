@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Game {
@@ -60,14 +62,67 @@ public class Game {
                                                             new String[]{"Vaccination", "Get acide"},
                                                             new Type[]{Type.MATH, Type.GRAVITATION});
                                                     
-
+    public static List<Character> characters;
 
     public static void main(String[] args){
+
         Scanner sc = new Scanner(System.in);
+        
+        chooseCharacter(sc);
+
+    }
+
+    public static void chooseCharacter(Scanner sc) {
+
+        /*
+         * Pour choisir son personnage, le joueur écrira le nom de son choix, et le programme reconnaîtra le personnage
+         * correspondant
+         */
+
+        characters = new ArrayList<Character>(); //on utilise une liste pour itérer
+        
+        characters.add(newton);
+        characters.add(pythagore);
+        characters.add(tesla);
+        characters.add(einstein);
+        characters.add(curie);
+        characters.add(vinci);
+        characters.add(bohr);
+        characters.add(turing);
+        characters.add(hawking);
+        characters.add(schrodinger);
+        characters.add(pasteur);
+
+        System.out.println("Liste des personnages: ");
+
+        for(Character c : characters)c.displayCharacter();
+
 
         
+        System.out.println("Joueur 1, veuillez sélectionner votre personnage");
+        String input;
+        while(player1 == null) { //tant que le personnage du joueur 1 n'a pas été défini
+            while((input = sc.nextLine()).length() < 3); //en dessous de 3 caractères, le personnage reconnu par la machine a des chances d'être confondu
+            input = input.toLowerCase(); //ne pas prendre en compte les majuscules
 
-        System.out.println("Joueur 1, veuillez sélectionner votre joueur")
+            for(Character c : characters) {
+                if(c.getName().toLowerCase().contains(input))player1 = c; //si le nom d'un personnage contient ce que le joueur a écrit, alors c'est le bon
+            }
+            if(player1 == null)System.out.println("Veuillez donner un nom de personnage valide");
+            else System.out.println("Vous avez choisi "+ player1.getName());
+        }
+
+        System.out.println("Joueur 2, veuillez sélectionner votre personnage (différent du joueur 1)");
+        while(player2 == null || player1 == player2) { //tant que le personnage du joueur 2 n'a pas été défini ou qu'il a choisi le même que le premier
+            while((input = sc.nextLine()).length() < 3); //en dessous de 3 caractères, le personnage reconnu par la machine a des chances d'être confondu
+            input = input.toLowerCase(); //ne pas prendre en compte les majuscules
+
+            for(Character c : characters) {
+                if(c.getName().toLowerCase().contains(input))player2 = c; //si le nom d'un personnage contient ce que le joueur a écrit, alors c'est le bon
+            }
+            if(player1 == null || player2 == player1)System.out.println("Veuillez donner un nom de personnage valide");
+            else System.out.println("Vous avez choisi "+ player2.getName());
+        }
 
     }
 
