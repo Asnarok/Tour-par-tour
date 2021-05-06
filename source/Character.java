@@ -127,7 +127,7 @@ public class Character {
         System.out.println("Attaques disponibles: \n"  + 
         "1) " + attacksNames[0] + " de type " + attacksTypes[0] + 
         "\n2) " + attacksNames[1] + " de type " + attacksTypes[1] +
-        "\n 3) Potions de soins (" + heals + ")");
+        "\n3) Potions de soins (" + heals + ")");
     }
 
     public static float randomFloat(int min, int max) {
