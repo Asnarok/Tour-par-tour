@@ -66,7 +66,7 @@ public class Game {
                 } else {
                     c.setHP(Character.HP_CONST);
                 }
-                System.out.print("Votre " + c.getName() + "s'est soigné. Il a maintenant " + c.getHP + "PV");
+                System.out.print("Votre " + c.getName() + "s'est soigné. Il a maintenant " + c.getHP() + "PV");
                 c.decreaseHeals();
             } else {
                 System.out.println("Votre " + c.getName() + "n'a plus de potions de soins ! ");
