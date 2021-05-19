@@ -4,5 +4,3 @@ I. Newton:
     attacks:
         Développement binomial: MATH
         Superpesanteur: GRAVITATION
-
-        
