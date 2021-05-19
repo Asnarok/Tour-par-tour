@@ -1,76 +1,76 @@
 I. Newton:
-    types: GRAVITATION
-    weaknesses: QUANTIC, COSMOS
-    attacks:
-        Développement binomial: MATH
-        Superpesanteur: GRAVITATION
+-types: GRAVITATION
+-weaknesses: QUANTIC, COSMOS
+-attacks:
+--Développement binomial: MATH
+--Superpesanteur: GRAVITATION
 
 Pythagore:
-    types: GEOMETRY
-    weaknesses: INFORMATIC, ELECTRIC
-    attacks:
-        ?: GEOMETRY
-        ?: MEDICAL
+-types: GEOMETRIC
+-weaknesses: INFORMATIC, ELECTRIC
+-attacks:
+--?: GEOMETRIC
+--?: MEDICAL
 
 N. Tesla:
-    types: ELECTRIC
-    weaknesses: MATTER, MATH
-    attacks:
-        Décharge HV: ELECTRIC
-        Rayons X: MEDICAL
+-types: ELECTRIC
+-weaknesses: MATTER, MATH
+-attacks:
+--Décharge HV: ELECTRIC
+--Rayons X: MEDICAL
 
 A. Einstein:
-    types: COSMOS
-    weaknesses: ELECTRIC, GEOMETRY
-    attacks:
-        LASER: RADIO
-        Singularité: COSMOS
+-types: COSMOS
+-weaknesses: ELECTRIC, GEOMETRIC
+-attacks:
+--LASER: RADIO
+--Singularité: COSMOS
 
 M. Curie:
-    types: RADIO
-    weaknesses: GEOMETRY, MEDICAL
-    attacks:
-        Impulsion Gamma: RADIO
-        ?: MATTER
+-types: RADIO
+-weaknesses: GEOMETRIC, MEDICAL
+-attacks:
+--Impulsion Gamma: RADIO
+--?: MATTER
 
 S. Hawking:
-    types: COSMOS
-    weaknesses: MEDICAL, MATTER
-    attacks:
-        Inflation: COSMOS
-        Frappe Bionique: INFORMATIC
+-types: COSMOS
+-weaknesses: MEDICAL, MATTER
+-attacks:
+--Inflation: COSMOS
+--Frappe Bionique: INFORMATIC
 
 L. de Vinci:
-    types: MATH, GEOMETRY, MEDICAL, MATTER
-    weaknesses: INFORMATIC, QUANTIC
-    attacks:
-        ?: GEOMETRY
-        ?: GRAVITATION
+-types: MATH, GEOMETRIC, MEDICAL, MATTER
+-weaknesses: INFORMATIC, QUANTIC
+-attacks:
+--?: GEOMETRIC
+--?: GRAVITATION
 
 E. Schrödinger:
-    types: RADIO, MATTER
-    weaknesses: GRAVITATION, RADIO
-    attacks:
-        Intrication quantique: QUANTIC
-        ?: ELECTRIC
+-types: RADIO, MATTER
+-weaknesses: GRAVITATION, RADIO
+-attacks:
+--Intrication quantique: QUANTIC
+--?: ELECTRIC
 
 N. Bohr:
-    types: MATTER
-    weaknesses: RADIO, ELECTRIC
-    attacks:
-        Charge photonique: QUANTIC
-        ?: MATTER
+-types: MATTER
+-weaknesses: RADIO, ELECTRIC
+-attacks:
+--Charge photonique: QUANTIC
+--?: MATTER
 
 L. Pasteur:
-    types: MEDICAL
-    weaknesses: MATH, GRAVITATION
-    attacks:
-        Vaccination: MEDICAL
-        Get Acide: MATTER
+-types: MEDICAL
+-weaknesses: MATH, GRAVITATION
+-attacks:
+--Vaccination: MEDICAL
+--Get Acide: MATTER
 
 A. Turing:
-    types: INFORMATIC
-    weaknesses: MEDICAL, COSMOS
-    attacks:
-        ?: MATH
-        Cyberattaque: INFORMATIC
+-types: INFORMATIC
+-weaknesses: MEDICAL, COSMOS
+-attacks:
+--?: MATH
+--Cyberattaque: INFORMATIC

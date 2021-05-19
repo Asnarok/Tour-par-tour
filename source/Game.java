@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,7 +10,6 @@ public class Game {
     public static Character idleChar; //joueur inactif
 
     public static void main(String[] args){
-
         Scanner sc = new Scanner(System.in);
         
         chooseCharacter(sc);
@@ -42,10 +40,12 @@ public class Game {
             }
             
         }
-
+       
     }
 
     public static int chooseAttack(Scanner sc) {
+
+        
         println("Choisissez une attaque");
         player1.displayAttacks();
         int i = 0;
@@ -72,11 +72,24 @@ public class Game {
          * correspondant
          */
 
-        List<Character> characters = new ArrayList<Character>(); //on utilise une liste pour itérer
+        List<Character> characters = IO.loadCharacters();
         
         System.out.println("Liste des personnages: ");
 
-        for(Character c : characters)c.displayCharacter();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        for(Character c : characters){
+            c.displayCharacter();
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
 
 
         

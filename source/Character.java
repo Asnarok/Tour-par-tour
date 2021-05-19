@@ -21,7 +21,6 @@ public class Character {
         this.types = types; //"
         this.weaknesses = weaknesses; //"
         this.attacks = attacks;//"
-
     
     }
 
@@ -128,12 +127,6 @@ public class Character {
         System.out.println("Votre " + name + " a encore " + HP + " / "+ HP_CONST + " PV et il lui reste " + heals + "potions de soins");
     }
 
-    public void displayAttacks() {
-        System.out.println("Attaques disponibles: \n"  + 
-        "1) " + attacksNames[0] + " de type " + attacksTypes[0] + 
-        "\n2) " + attacksNames[1] + " de type " + attacksTypes[1] +
-        "\n3) Potions de soins (" + heals + ")");
-    }
 
     public static float randomFloat(int min, int max) {
         return (int)(Math.random() * ((max-min+1)*2))/2f+min;
@@ -144,6 +137,5 @@ public class Character {
         displayAttacks();
         System.out.println();
     }
-    
 
 }
