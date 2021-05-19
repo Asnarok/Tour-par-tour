@@ -58,9 +58,6 @@ public class Character {
         return heals;
     }
 
-    /**
-     * 
-     */
     public boolean isWeakness(Type attackType) {
         int i = 0;
         
