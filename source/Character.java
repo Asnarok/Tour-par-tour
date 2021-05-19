@@ -113,16 +113,7 @@ public class Character {
         }
         
     }
-
-    public String[] getAttackNames() {
-        String[] s = new String[attacks.length];
-        for(int i = 0; i < attacks.length; i++) {
-            s[i] = attacks[i].getAttackName();
-        }
-
-        return s;
-    }
-
+    
     public void displayHP() {
         System.out.println("Votre " + name + " a encore " + HP + " / "+ HP_CONST + " PV et il lui reste " + heals + "potions de soins");
     }
