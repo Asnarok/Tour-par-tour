@@ -5,6 +5,7 @@ public class Character {
     
     //constantes
     public static final int HP_CONST = 100;
+    public static final int HEAL_HP = 20;
 
     private String name;
     private float HP;
@@ -74,49 +75,14 @@ public class Character {
     }
 
 
-    public float takeDamage(Type attackType) {
+    
 
-        float damage;
-        if(isWeakness(attackType)){
-            System.out.println("C'est super efficace !");
-            damage = randomFloat(20, 30);
-        }
-        else if(isResistance(attackType)){
-            System.out.println("Ce n'est pas très efficace...");
-            damage = randomFloat(1, 10);
-        }
-        else damage = randomFloat(10, 20);
+       
 
-        if(HP-damage > 0)HP-=damage;
-        else HP = 0;
-
-        System.out.println("Le "+name+" ennemi a subi "+damage+" points de dégâts.");
-        return damage;
-    }
+    
 
     public void decreaseHeals() {
         heals--;
     }
 
-    public void heal() {
-        if (heals !=0){
-           if (HP < HP_CONST - 20 ){ 
-            HP += 20; 
-        } else { 
-            HP = HP_CONST; 
-        }
-        System.out.print("Votre " + name + " s'est soigné. ");
-        displayHP();
-        heals --;
-        } else {
-            System.out.println("Votre " + name + " n'a plus de potions de soins !");
-        }
-        
-    }
-
-    public static float randomFloat(int min, int max) {
-        return (int)(Math.random() * ((max-min+1)*2))/2f+min;
-    }
-
 }
-
