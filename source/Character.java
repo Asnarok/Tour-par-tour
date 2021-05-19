@@ -3,7 +3,7 @@
 
 public class Character {
     
-    //types
+    //constantes
     public static final int HP_CONST = 100;
 
     private String name;
@@ -29,12 +29,14 @@ public class Character {
         return name;
     }
 
-
     public float getHP() {
         return HP;
     }
 
-   
+    public void setHP(float HP) {
+        this.HP = HP;
+    }
+
     public boolean isAlive() {
         return HP > 0;
     }
