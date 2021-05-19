@@ -44,18 +44,35 @@ public class Game {
     }
 
     public static int chooseAttack(Scanner sc) {
-
         
         println("Choisissez une attaque");
-        player1.displayAttacks();
+        displayAttacks(playingChar);
         int i = 0;
-        while(i < 1 || i > 3){
+        while(i < 1 || i > 3) {
             i = sc.nextInt();
             if(i < 1 || i > 3) println("Attaque invalide.");
         }
         i--;
         println(playingChar.getName()+" attaque "+ playingChar.getAttackNames()[i]+" !");
         return i;
+    }
+
+    public static void displayAttacks(Character c) {
+        System.out.println("Attaques disponibles: \n"  + 
+        "1) " + c.getAttacks()[0] + 
+        "\n2) " + c.getAttacks()[1] +
+        "\n3) Potions de soins (" + c.getHeals() + ")");
+        System.out.println();
+    }
+
+    public static void displayCharacter(Character c) {
+        System.out.println(c.getName());
+        displayAttacks(c);
+        System.out.println();
+    }
+
+    public void displayHP(Character c) {
+        System.out.println("Votre " + c.getName() + " a encore " + c.getHP() + " / "+ Character.HP_CONST + " PV et il lui reste " + c.getHeals() + "potions de soins");
     }
 
     public static void println(String s) {
@@ -77,7 +94,7 @@ public class Game {
         System.out.println("Liste des personnages: ");
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(00);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
