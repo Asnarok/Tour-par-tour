@@ -74,18 +74,6 @@ public class Game {
 
         List<Character> characters = new ArrayList<Character>(); //on utilise une liste pour itérer
         
-        characters.add(newton);
-        characters.add(pythagore);
-        characters.add(tesla);
-        characters.add(einstein);
-        characters.add(curie);
-        characters.add(vinci);
-        characters.add(bohr);
-        characters.add(turing);
-        characters.add(hawking);
-        characters.add(schrodinger);
-        characters.add(pasteur);
-
         System.out.println("Liste des personnages: ");
 
         for(Character c : characters)c.displayCharacter();

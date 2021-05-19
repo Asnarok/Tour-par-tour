@@ -4,3 +4,73 @@ I. Newton:
     attacks:
         Développement binomial: MATH
         Superpesanteur: GRAVITATION
+
+Pythagore:
+    types: GEOMETRY
+    weaknesses: INFORMATIC, ELECTRIC
+    attacks:
+        ?: GEOMETRY
+        ?: MEDICAL
+
+N. Tesla:
+    types: ELECTRIC
+    weaknesses: MATTER, MATH
+    attacks:
+        Décharge HV: ELECTRIC
+        Rayons X: MEDICAL
+
+A. Einstein:
+    types: COSMOS
+    weaknesses: ELECTRIC, GEOMETRY
+    attacks:
+        LASER: RADIO
+        Singularité: COSMOS
+
+M. Curie:
+    types: RADIO
+    weaknesses: GEOMETRY, MEDICAL
+    attacks:
+        Impulsion Gamma: RADIO
+        ?: MATTER
+
+S. Hawking:
+    types: COSMOS
+    weaknesses: MEDICAL, MATTER
+    attacks:
+        Inflation: COSMOS
+        Frappe Bionique: INFORMATIC
+
+L. de Vinci:
+    types: MATH, GEOMETRY, MEDICAL, MATTER
+    weaknesses: INFORMATIC, QUANTIC
+    attacks:
+        ?: GEOMETRY
+        ?: GRAVITATION
+
+E. Schrödinger:
+    types: RADIO, MATTER
+    weaknesses: GRAVITATION, RADIO
+    attacks:
+        Intrication quantique: QUANTIC
+        ?: ELECTRIC
+
+N. Bohr:
+    types: MATTER
+    weaknesses: RADIO, ELECTRIC
+    attacks:
+        Charge photonique: QUANTIC
+        ?: MATTER
+
+L. Pasteur:
+    types: MEDICAL
+    weaknesses: MATH, GRAVITATION
+    attacks:
+        Vaccination: MEDICAL
+        Get Acide: MATTER
+
+A. Turing:
+    types: INFORMATIC
+    weaknesses: MEDICAL, COSMOS
+    attacks:
+        ?: MATH
+        Cyberattaque: INFORMATIC
