@@ -61,17 +61,17 @@ public class Character {
     public boolean isWeakness(Type attackType) {
         int i = 0;
         
-        while(weaknesses[i] != attackType && i < weaknesses.length)i++;
+        while(weaknesses[i] != attackType && i < weaknesses.length-1)i++;
         
-        return i < weaknesses.length;
+        return i < weaknesses.length-1;
     }
 
     public boolean isResistance(Type attackType) {
         int i = 0;
         
-        while(weaknesses[i] == attackType && i < weaknesses.length)i++;
+        while(types[i] != attackType && i < types.length-1)i++;
         
-        return i < weaknesses.length;
+        return i < types.length-1;
     }
 
     public void decreaseHeals() {

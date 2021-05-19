@@ -68,17 +68,25 @@ public class IO {
 
                             finished = true; //fin du traitement d'un personnage
 
-                        }else if(line.startsWith("-")) { //attaque ou faiblesse
+                        }else if(line.startsWith("-")) { //type ou faiblesse
+                            
+                            String[] strings;
 
                             Type[] pointer; //pointeur tableau
-                            if(line.contains("types"))pointer = types; //si on traite les types, le pointeur renverra à la variable temporaire des types
-                            else pointer = weaknesses; //cas contraire
-                            
-                                String[] typesAsStrings = line.substring(7).replaceAll(" ", "").split(","); //suppression des espaces inutiles, et découpage en fonction des virgules
-                                pointer = new Type[typesAsStrings.length]; //initialisation du tableau temporaire des types ou faiblesses
-                                for(int i = 0; i < typesAsStrings.length; i++) {
-                                    pointer[i] = Type.parseType(typesAsStrings[i]); //conversion en types et stockage dans le tableau temporaire
-                                }
+
+                            if(line.contains("types")) {//si on traite les types, le pointeur renverra à la variable temporaire des types
+                                strings = line.substring(line.indexOf("types:")+6).replaceAll(" ", "").split(","); //suppression des espaces inutiles, et découpage en fonction des virgules
+                                types = new Type[strings.length];
+                                pointer = types;
+                            }else { //cas contraire
+                                strings = line.substring(line.indexOf("weaknesses:")+11).replaceAll(" ", "").split(","); //suppression des espaces inutiles, et découpage en fonction des virgules
+                                weaknesses = new Type[strings.length];
+                                pointer = weaknesses;
+                            }
+                                
+                            for(int i = 0; i < strings.length; i++) {
+                                pointer[i] = Type.parseType(strings[i]); //conversion en types et stockage dans le tableau temporaire
+                            }
 
                             }
                         }

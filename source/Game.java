@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -30,7 +31,7 @@ public class Game {
             int attack = chooseAttack(sc);
 
             if(attack < 2){ //dégâts
-                Type attackType = playingChar.getTypes()[attack];
+                Type attackType = playingChar.getAttacks()[attack].getAttackType();
                 takeDamage(idleChar, attackType);
                 displayHP(idleChar);
             }else { //potion
@@ -66,10 +67,10 @@ public class Game {
                 } else {
                     c.setHP(Character.HP_CONST);
                 }
-                System.out.print("Votre " + c.getName() + "s'est soigné. Il a maintenant " + c.getHP() + "PV");
+                System.out.print("Votre " + c.getName() + " s'est soigné. Il a maintenant " + c.getHP() + "PV");
                 c.decreaseHeals();
             } else {
-                System.out.println("Votre " + c.getName() + "n'a plus de potions de soins ! ");
+                System.out.println("Votre " + c.getName() + " n'a plus de potions de soins ! ");
             }
         }
     
@@ -82,16 +83,21 @@ public class Game {
         displayAttacks(playingChar);
         int i = 0;
         while(i < 1 || i > 3) {
-            i = sc.nextInt();
+            try {
+                i = sc.nextInt();
+            }catch(InputMismatchException e) {
+                e.printStackTrace();
+            }
             if(i < 1 || i > 3) println("Attaque invalide.");
         }
         i--;
-        println(playingChar.getName()+" attaque "+ playingChar.getAttacks()[i].getAttackName()+" !");
+        if(i < 2)println(playingChar.getName()+" attaque "+ playingChar.getAttacks()[i].getAttackName()+" !");
+
         return i;
     }
 
     public static void displayAttacks(Character c) {
-        System.out.println("Attaques disponibles: \n"  + 
+        System.out.println("-Attaques disponibles: \n"  + 
         "1) " + c.getAttacks()[0] + 
         "\n2) " + c.getAttacks()[1] +
         "\n3) Potions de soins (" + c.getHeals() + ")");
@@ -99,13 +105,33 @@ public class Game {
     }
 
     public static void displayCharacter(Character c) {
-        System.out.println(c.getName());
+
+        System.out.print(c.getName()+" de type(s) ");
+        for(int i = 0; i < c.getTypes().length; i++) {
+            System.out.print(c.getTypes()[i]);
+            if(i < c.getTypes().length-1)System.out.print(" et ");
+        }
+
+        System.out.print("\n-Faiblesses: ");
+        for(int i = 0; i < c.getWeaknesses().length; i++) {
+            System.out.print(c.getWeaknesses()[i]);
+            if(i < c.getWeaknesses().length-1)System.out.print(" et ");
+        }
+
+        System.out.println();
+
         displayAttacks(c);
         System.out.println();
     }
 
     public static void displayHP(Character c) {
-        System.out.println("Votre " + c.getName() + " a encore " + c.getHP() + " / "+ Character.HP_CONST + " PV et il lui reste " + c.getHeals() + "potions de soins");
+        System.out.print("Votre " + c.getName() + " a encore " + c.getHP() + " / "+ Character.HP_CONST+ " [");
+        int bar = (int)(Math.round(c.getHP()/10));
+        for(int i = 0; i < 10; i++) {
+            if(i < bar)System.out.print("■");
+            else System.out.print("□");
+        }
+        System.out.println("] PV et il lui reste " + c.getHeals() + "potions de soins");
     }
 
     public static void println(String s) {
@@ -126,7 +152,7 @@ public class Game {
         System.out.println("Liste des personnages: ");
 
         try {
-            Thread.sleep(1000);
+            Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -134,7 +160,7 @@ public class Game {
         for(Character c : characters){
             displayCharacter(c);
             try {
-                Thread.sleep(500);
+                Thread.sleep(200);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
