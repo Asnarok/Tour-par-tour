@@ -95,6 +95,10 @@ public class Character {
         return damage;
     }
 
+    public void decreaseHeals() {
+        heals--;
+    }
+
     public void heal() {
         if (heals !=0){
            if (HP < HP_CONST - 20 ){ 
@@ -114,6 +118,6 @@ public class Character {
     public static float randomFloat(int min, int max) {
         return (int)(Math.random() * ((max-min+1)*2))/2f+min;
     }
-    
+
 }
 
