@@ -40,6 +40,20 @@ public class Game {
             }
             
         }
+
+        public static void heal(Character c){
+            
+            if (c.getHeals() > 0){
+                if (c.getHP() < Character.HP_CONST - Character.HEAL_HP){
+                    c.setHP += Character.HEAL_HP;
+                } else {
+                    c.setHP = Character.HP_CONST;
+                }
+                System.out.print("Votre " + c.getName() + "s'est soigné. Il a maintenant " + c.getHP + "PV");
+                
+
+            }
+        }
        
     }
 
