@@ -22,8 +22,7 @@ public class Game {
             if(playingChar == player2){
                 playingChar = player1; 
                 idleChar = player2;
-            }
-            else {
+            } else {
                 playingChar = player2;
                 idleChar = player1;
             } 
@@ -34,29 +33,49 @@ public class Game {
                 Type attackType = playingChar.getTypes()[attack];
                 idleChar.takeDamage(attackType);
                 displayHP(idleChar);
-                
             }else { //potion
-                playingChar.heal();
+                heal(playingChar);
             }
-            
         }
+    }
+
+    public static void takeDamage(Character c, Type attackType) {
+
+        float damage;
+        if(c.isWeakness(attackType)){
+            System.out.println("C'est super efficace !");
+            damage = randomFloat(20, 30);
+        }
+        else if(c.isResistance(attackType)){
+            System.out.println("Ce n'est pas très efficace...");
+            damage = randomFloat(1, 10);
+        }
+        else damage = randomFloat(10, 20);
+
+        if(c.getHP()-damage > 0)c.setHP(c.getHP()-damage); 
+        else c.setHP(0);
+        System.out.println("Le " + c.getName() + " ennemi a subi "+ damage + " points de dégâts.");
+
+    }
 
         public static void heal(Character c){
             
             if (c.getHeals() > 0){
                 if (c.getHP() < Character.HP_CONST - Character.HEAL_HP){
-                    c.setHP += Character.HEAL_HP;
+                    c.setHP(c.getHP() + Character.HEAL_HP);
                 } else {
-                    c.setHP = Character.HP_CONST;
+                    c.setHP(Character.HP_CONST);
                 }
                 System.out.print("Votre " + c.getName() + "s'est soigné. Il a maintenant " + c.getHP + "PV");
-                
-
+                c.decreaseHeals();
+            } else {
+                System.out.println("Votre " + c.getName() + "n'a plus de potions de soins ! ");
             }
         }
+    
+    
        
-    }
-
+    
     public static int chooseAttack(Scanner sc) {
         
         println("Choisissez une attaque");
@@ -95,7 +114,6 @@ public class Game {
     }
 
 
-
     public static void chooseCharacter(Scanner sc) {
 
         /*
@@ -123,7 +141,6 @@ public class Game {
         }
 
 
-        
         System.out.println("Joueur 1, veuillez sélectionner votre personnage");
         String input;
         while(player1 == null) { //tant que le personnage du joueur 1 n'a pas été défini
@@ -151,6 +168,8 @@ public class Game {
 
     }
 
+    public static float randomFloat(int min, int max) {
+        return (int)(Math.random() * ((max-min+1)*2))/2f+min;
+    }
 
-    
 }
