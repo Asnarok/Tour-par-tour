@@ -33,7 +33,7 @@ public class Game {
             if(attack < 2){ //dégâts
                 Type attackType = playingChar.getTypes()[attack];
                 idleChar.takeDamage(attackType);
-                idleChar.displayHP();
+                displayHP(idleChar);
                 
             }else { //potion
                 playingChar.heal();
@@ -53,7 +53,7 @@ public class Game {
             if(i < 1 || i > 3) println("Attaque invalide.");
         }
         i--;
-        println(playingChar.getName()+" attaque "+ playingChar.getAttackNames()[i]+" !");
+        println(playingChar.getName()+" attaque "+ playingChar.getAttacks()[i].getAttackName()+" !");
         return i;
     }
 
@@ -71,7 +71,7 @@ public class Game {
         System.out.println();
     }
 
-    public void displayHP(Character c) {
+    public static void displayHP(Character c) {
         System.out.println("Votre " + c.getName() + " a encore " + c.getHP() + " / "+ Character.HP_CONST + " PV et il lui reste " + c.getHeals() + "potions de soins");
     }
 
@@ -100,7 +100,7 @@ public class Game {
         }
 
         for(Character c : characters){
-            c.displayCharacter();
+            displayCharacter(c);
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
