@@ -24,38 +24,35 @@ public class Character {
     
     }
 
-    /**
-     * 
-     * @return the name of the character
-     */
+ 
     public String getName() {
         return name;
     }
 
-    /**
-     * @return the health points of the character
-     */
+
     public float getHP() {
         return HP;
     }
 
-    /**
-     * 
-     * @return a boolean indicating whether the character is alive or not
-     */
+   
     public boolean isAlive() {
         return HP > 0;
     }
 
-    /**
-     * @return the type of the character
-     */
     public Type[] getTypes() {
         return types;
     }
 
     public Type[] getWeaknesses() {
         return weaknesses;
+    }
+
+    public Attack[] getAttacks(){
+        return attacks; 
+    }
+    
+    public int getHeals(){
+        return heals;
     }
 
     /**
@@ -114,28 +111,15 @@ public class Character {
         
     }
 
-    public String[] getAttackNames() {
-        String[] s = new String[attacks.length];
-        for(int i = 0; i < attacks.length; i++) {
-            s[i] = attacks[i].getAttackName();
-        }
-
-        return s;
-    }
-
-    public void displayHP() {
-        System.out.println("Votre " + name + " a encore " + HP + " / "+ HP_CONST + " PV et il lui reste " + heals + "potions de soins");
-    }
+ 
 
 
     public static float randomFloat(int min, int max) {
         return (int)(Math.random() * ((max-min+1)*2))/2f+min;
     }
 
-    public void displayCharacter() {
-        System.out.println(name);
-        displayAttacks();
-        System.out.println();
-    }
+   
 
+   
 }
+
