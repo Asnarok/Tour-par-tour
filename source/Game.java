@@ -94,7 +94,7 @@ public class Game {
         System.out.println("Liste des personnages: ");
 
         try {
-            Thread.sleep(00);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
