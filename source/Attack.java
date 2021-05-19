@@ -24,4 +24,8 @@ public class Attack {
     public Type getAttackType() {
         return attackType;
     }
+
+    public String toString(){
+        return attackName + " de type " + attackType; 
+    }
 }
