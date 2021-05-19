@@ -21,9 +21,10 @@ public class IO {
             InputStreamReader isr = new InputStreamReader(is); //convertir le byte stream en character stream
             BufferedReader br = new BufferedReader(isr); //lecture ligne par ligne du fichier, sous forme de Strings
 
-            //variables temporaires, servant au traitement ->
 
             String line; //ligne lue
+            
+            //variables temporaires, servant au traitement ->
 
             String characterName = "";
             Type[] types = null;
