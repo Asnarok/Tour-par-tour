@@ -13,7 +13,7 @@ public class IO {
         
         List<Character> list = new ArrayList<Character>();
         
-        File f = new File("Tour-par-tour/characters.txt");
+        File f = new File(System.getProperty("user.dir")+"/characters.txt");
 
         try {
 

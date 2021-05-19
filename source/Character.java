@@ -77,13 +77,6 @@ public class Character {
         return i < weaknesses.length;
     }
 
-
-    
-
-       
-
-    
-
     public void decreaseHeals() {
         heals--;
     }

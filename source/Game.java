@@ -31,7 +31,7 @@ public class Game {
 
             if(attack < 2){ //dégâts
                 Type attackType = playingChar.getTypes()[attack];
-                idleChar.takeDamage(attackType);
+                takeDamage(idleChar, attackType);
                 displayHP(idleChar);
             }else { //potion
                 heal(playingChar);
