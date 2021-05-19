@@ -11,18 +11,18 @@ public class Character {
     private Type[] types;
     private Type[] weaknesses; //sera rempli des types qui seront sa faiblesse
 
-    private String[] attacksNames;
-    private Type[] attacksTypes;
+    private Attack[] attacks;
 
     private int heals = 2; //nombre de potions 
 
-    public Character(String name, Type[] types,  Type[] attacksTypes, String[] attacksNames,Type[] weaknesses) { // constructeur pour des HP constants
+    public Character(String name, Type[] types,  Attack[] attacks, Type[] weaknesses) { // constructeur pour des HP constants
         this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
         this.HP = HP_CONST;
         this.types = types; //"
         this.weaknesses = weaknesses; //"
-        this.attacksNames = attacksNames;//"
-        this.attacksTypes = attacksTypes;//"
+        this.attacks = attacks;//"
+
+    
     }
 
     /**
@@ -116,7 +116,12 @@ public class Character {
     }
 
     public String[] getAttackNames() {
-        return attacksNames;
+        String[] s = new String[attacks.length];
+        for(int i = 0; i < attacks.length; i++) {
+            s[i] = attacks[i].getAttackName();
+        }
+
+        return s;
     }
 
     public void displayHP() {

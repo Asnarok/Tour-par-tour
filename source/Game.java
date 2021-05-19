@@ -8,8 +8,7 @@ public class Game {
 
     //personnages
     public static final Character newton = new Character("I. Newton", new Type[]{Type.GRAVITATION}, 
-                                                        new Type[]{Type.MATH, Type.GRAVITATION},
-                                                        new String[]{"Développement binomial", "Superpesanteur"},
+                                                        new Attack[]{new Attack()},
                                                         new Type[]{Type.QUANTIC, Type.COSMOS});
 
     public static final Character pythagore = new Character("Pythagore", new Type[]{Type.GEOMETRIC}, 
@@ -119,6 +118,8 @@ public class Game {
         if(playingChar == player1)System.out.println("(Joueur 1) "+s);
         else System.out.println("(Joueur 2) "+s);
     }
+
+
 
     public static void chooseCharacter(Scanner sc) {
 

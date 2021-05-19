@@ -1,0 +1,8 @@
+I. Newton:
+    types: GRAVITATION
+    weaknesses: QUANTIC, COSMOS
+    attacks:
+        Développement binomial: MATH
+        Superpesanteur: GRAVITATION
+
+        
