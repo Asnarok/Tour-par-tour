@@ -28,7 +28,8 @@ public class Game {
                 idleChar = player1;
             } 
 
-            int attack = chooseAttack(sc);
+            int attack = -1;
+            while(attack == -1)attack = chooseAttack(sc);
 
             if(attack < 2){ //dégâts
                 Type attackType = playingChar.getAttacks()[attack].getAttackType();
@@ -59,20 +60,19 @@ public class Game {
 
     }
 
-        public static void heal(Character c){
-            
-            if (c.getHeals() > 0){
-                if (c.getHP() < Character.HP_CONST - Character.HEAL_HP){
-                    c.setHP(c.getHP() + Character.HEAL_HP);
-                } else {
-                    c.setHP(Character.HP_CONST);
-                }
-                System.out.print("Votre " + c.getName() + " s'est soigné. Il a maintenant " + c.getHP() + "PV");
-                c.decreaseHeals();
-            } else {
-                System.out.println("Votre " + c.getName() + " n'a plus de potions de soins ! ");
-            }
+    public static boolean heal(Character c){
+
+        if (c.getHP() < Character.HP_CONST - Character.HEAL_HP){
+            c.setHP(c.getHP() + Character.HEAL_HP);
+        } else if(c.getHP() < Character.HP_CONST){
+            c.setHP(Character.HP_CONST);
         }
+
+        println("Votre " + c.getName() + " s'est soigné. Il a maintenant " + c.getHP() + "PV");
+        c.decreaseHeals();
+        return true;
+            
+    }
     
     
        
@@ -92,7 +92,15 @@ public class Game {
         }
         i--;
         if(i < 2)println(playingChar.getName()+" attaque "+ playingChar.getAttacks()[i].getAttackName()+" !");
-
+        else {
+            if(playingChar.getHeals() == 0) {
+                println("Votre " + playingChar.getName()+" n'a plus de potions.");
+                return -1; //code d'erreur
+            }else if(playingChar.getHP() == Character.HP_CONST) {
+                println("Votre " + playingChar.getName() +" n'a pas besoin de se soigner.");
+                return -1; //code d'erreur
+            }
+        }
         return i;
     }
 
@@ -125,13 +133,13 @@ public class Game {
     }
 
     public static void displayHP(Character c) {
-        System.out.print("Votre " + c.getName() + " a encore " + c.getHP() + " / "+ Character.HP_CONST+ " [");
+        System.out.print("Votre " + c.getName() + " a encore " + c.getHP() + " / "+ Character.HP_CONST+ " PV [");
         int bar = (int)(Math.round(c.getHP()/10));
         for(int i = 0; i < 10; i++) {
             if(i < bar)System.out.print("■");
             else System.out.print("□");
         }
-        System.out.println("] PV et il lui reste " + c.getHeals() + "potions de soins");
+        System.out.println("] PV et il lui reste " + c.getHeals() + " potions de soins");
     }
 
     public static void println(String s) {
