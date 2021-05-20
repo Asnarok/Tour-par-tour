@@ -1,0 +1,41 @@
+Pikachu:
+-types: Electrique
+-weaknesses: Sol, 
+-attacks:
+--Eclair: Electrique
+--Vive-attaque: Normal
+
+Salamèche:
+-types: Feu
+-weaknesses: Eau, Sol, Normal
+-attacks:
+--Flammèche: Feu
+--Griffe: Normal
+
+Crapuce:
+-types: Eau
+-weaknesses: Plante, Electrique, Normal
+-attacks:
+--Ecume: Eau 
+--Charge: Normal
+
+Bulbizarre:
+-types: Plante
+-weaknesses: Feu, Vol, Normal
+-attacks:
+--Fouet-Liannes: Plante
+--Charge: Normal
+
+Roucool:
+-types: Vol
+-weaknesses: Electrique, Sol, Normal
+-attacks:
+--Tranch'air: Vol
+--Vive-attaque: Normal
+
+Taupiqueur:
+-types: Sol
+-weaknesses: PLante, Eau, Normal
+-attacks:
+--Coud'boue: Sol
+--Griffe: Normal
