@@ -1,0 +1,20 @@
+C. Fusco:
+-types: Gravité
+-weaknesses: Informatique
+-attacks:
+--Règle des trois doigts: Gravité
+--Approximation des petits angles (θ): Géométrique
+
+C. Agnès:
+-types: Maths
+-weaknesses: Gravité
+-attacks:
+--Bravoure de fonction: Maths
+--Liste d'attente Zoom: Informatique
+
+T. Duminy:
+-types: Mécanique
+-weaknesses: Informatique
+-attacks:
+--Situation funky: Humour
+--Trou oblong: Mécanique

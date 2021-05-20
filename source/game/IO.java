@@ -2,28 +2,56 @@ package game;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class IO {
-
-    public static void init() {
-        File dir = new File(System.getProperty("user.dir"));
-        File[] files = dir.listFiles();
-        for(File f : files) {
-            
+    
+    public static FileFilter txtFilter = new FileFilter() {
+        public boolean accept(File file) {
+            return file.getName().endsWith(".txt");
         }
+    };
+
+    public static File selectCharactersFile(Scanner sc) {
+
+        File dir = new File(System.getProperty("user.dir"));
+        File[] files = dir.listFiles(IO.txtFilter);
+
+
+        System.out.println("Voici la liste de fichiers disponibles pour le chargement du jeu:");
+        String name;
+        int i = 1;
+        for(File f : files) {
+            name = f.getName().substring(0, f.getName().lastIndexOf(".")).toLowerCase();
+            System.out.println(i+") "+name);
+            i++;
+        }
+
+        File selected = null;
+
+        int input;
+
+        while(selected == null) {
+            input = sc.nextInt()-1;
+            if(input >= 0 && input < files.length)selected = files[input];
+            if(selected == null)System.out.println("Veuillez entrer un nom de fichier valide.");
+        }
+
+        return selected;
+
     }
 
-    public static List<Character> loadCharacters() {
+    public static List<Character> loadCharacters(File f) {
         
         List<Character> list = new ArrayList<Character>();
-        
-        File f = new File("characters.txt");
 
         try {
 

@@ -1,5 +1,6 @@
 package game;
 
+import java.io.File;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
@@ -11,8 +12,15 @@ public class Game {
     public static Character playingChar; //joueur en train de jouer
     public static Character idleChar; //joueur inactif
 
+    public static File charactersFile;
+
     public static void main(String[] args){
+
+
+
         Scanner sc = new Scanner(System.in);
+
+        charactersFile = IO.selectCharactersFile(sc);
         
         chooseCharacter(sc);
 
@@ -155,7 +163,7 @@ public class Game {
          * correspondant
          */
 
-        List<Character> characters = IO.loadCharacters();
+        List<Character> characters = IO.loadCharacters(charactersFile);
         
         System.out.println("Liste des personnages: ");
 
