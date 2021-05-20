@@ -13,7 +13,10 @@ public class IO {
 
     public static void init() {
         File dir = new File(System.getProperty("user.dir"));
-        File[] files = dir.listTypes();
+        File[] files = dir.listFiles();
+        for(File f : files) {
+            
+        }
     }
 
     public static List<Character> loadCharacters() {
