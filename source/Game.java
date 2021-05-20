@@ -44,6 +44,7 @@ public class Game {
     public static void takeDamage(Character c, Type attackType) {
 
         float damage;
+        
         if(c.isWeakness(attackType)){
             System.out.println("C'est super efficace !");
             damage = randomFloat(20, 30);
@@ -207,7 +208,7 @@ public class Game {
     }
 
     public static float randomFloat(int min, int max) {
-        return (int)(Math.random() * ((max-min+1)*2))/2f+min;
+        return (int)(Math.random() * ((max-min+0.5f)*2))/2f+min;
     }
 
 }
