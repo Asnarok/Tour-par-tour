@@ -57,6 +57,7 @@ public class Game {
         if(c.getHP()-damage > 0)c.setHP(c.getHP()-damage); 
         else c.setHP(0);
         System.out.println("Le " + c.getName() + " ennemi a subi "+ damage + " points de dégâts.");
+        System.out.println();
 
     }
 
@@ -139,7 +140,8 @@ public class Game {
             if(i < bar)System.out.print("■");
             else System.out.print("□");
         }
-        System.out.println("] PV et il lui reste " + c.getHeals() + " potions de soins");
+        System.out.println("] et il lui reste " + c.getHeals() + " potion.s de soins");
+        System.out.println();
     }
 
     public static void println(String s) {
@@ -186,6 +188,7 @@ public class Game {
             }
             if(player1 == null)System.out.println("Veuillez donner un nom de personnage valide");
             else System.out.println("Vous avez choisi "+ player1.getName());
+            System.out.println();
         }
 
         System.out.println("Joueur 2, veuillez sélectionner votre personnage (différent du joueur 1)");
@@ -198,6 +201,7 @@ public class Game {
             }
             if(player1 == null || player2 == player1)System.out.println("Veuillez donner un nom de personnage valide");
             else System.out.println("Vous avez choisi "+ player2.getName());
+            System.out.println();
         }
 
     }
