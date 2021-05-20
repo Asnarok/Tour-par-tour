@@ -74,3 +74,10 @@ A. Turing:
 -attacks:
 --?: MATH
 --Cyberattaque: INFORMATIC
+
+C. Fusco:
+-types: GRAVITATION
+-weaknesses: MEDICAL, INFORMATIC
+-attacks:
+--Règle des trois doigts: GRAVITATION
+--Approximation des petits angles (θ): GEOMETRIC
