@@ -3,17 +3,16 @@ package game;
 public class Character {
     
     //constantes
-    public static final int HP_CONST = 100;
-    public static final int HEAL_HP = 20;
+    public static final int HP_CONST = 100; //PV de chaque perso au départ 
+    public static final int HEAL_HP = 20; //PV gagné lors du soin 
 
+    // attributs du perso 
     private String name;
     private float HP;
-    private int[] types;
+    private int[] types; //sera rempli du/des type.s qui sera.ont sa.ses résistances 
     private int[] weaknesses; //sera rempli des types qui seront sa faiblesse
-
-    private Attack[] attacks;
-
-    private int heals = 2; //nombre de potions 
+    private Attack[] attacks; //sera remplis d'objet de type Attack 
+    private int heals = 2; //nombre de potions de soins 
 
     public Character(String name, int[] types,  Attack[] attacks, int[] weaknesses) { // constructeur pour des HP constants
         this.name = name; //pas besoin de setter puisqu'il sera initialisé une seule fois
@@ -21,10 +20,9 @@ public class Character {
         this.types = types; //"
         this.weaknesses = weaknesses; //"
         this.attacks = attacks;//"
-    
     }
-
- 
+  
+    //getters et setters 
     public String getName() {
         return name;
     }
@@ -35,10 +33,6 @@ public class Character {
 
     public void setHP(float HP) {
         this.HP = HP;
-    }
-
-    public boolean isAlive() {
-        return HP > 0;
     }
 
     public int[] getTypes() {
@@ -57,6 +51,11 @@ public class Character {
         return heals;
     }
 
+    //
+    public boolean isAlive() {
+        return HP > 0;
+    }
+
     public boolean isWeakness(int attackType) {
         int i = 0;
         
@@ -72,7 +71,7 @@ public class Character {
         return i < types.length;
     }
 
-    public void decreaseHeals() {
+    public void decreaseHeals() { //permettera de supprimer les potions utilisées
         heals--;
     }
 
