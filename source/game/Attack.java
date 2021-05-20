@@ -3,9 +3,9 @@ package game;
 public class Attack {
 
     private String attackName;
-    private Type attackType;
+    private int attackType;
 
-    public Attack(Type attackType, String attackName) {
+    public Attack(int attackType, String attackName) {
         setAttackName(attackName);
         setAttackType(attackType);    
     }
@@ -18,15 +18,15 @@ public class Attack {
         return attackName;
     }
     
-    public void setAttackType(Type type) {
+    public void setAttackType(int type) {
         attackType = type;
     }
 
-    public Type getAttackType() {
+    public int getAttackType() {
         return attackType;
     }
 
     public String toString(){
-        return attackName + " de type " + attackType; 
+        return attackName + " de type " + Types.types.get(attackType); 
     }
 }

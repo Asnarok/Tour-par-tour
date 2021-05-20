@@ -33,7 +33,7 @@ public class Game {
             while(attack == -1)attack = chooseAttack(sc);
 
             if(attack < 2){ //dégâts
-                Type attackType = playingChar.getAttacks()[attack].getAttackType();
+                int attackType = playingChar.getAttacks()[attack].getAttackType();
                 takeDamage(idleChar, attackType);
                 displayHP(idleChar);
             }else { //potion
@@ -42,7 +42,7 @@ public class Game {
         }
     }
 
-    public static void takeDamage(Character c, Type attackType) {
+    public static void takeDamage(Character c, int attackType) {
 
         float damage;
         
@@ -116,13 +116,13 @@ public class Game {
 
         System.out.print(c.getName()+" de type(s) ");
         for(int i = 0; i < c.getTypes().length; i++) {
-            System.out.print(c.getTypes()[i]);
+            System.out.print(Types.types.get(c.getTypes()[i]));
             if(i < c.getTypes().length-1)System.out.print(" et ");
         }
 
         System.out.print("\n-Faiblesses: ");
         for(int i = 0; i < c.getWeaknesses().length; i++) {
-            System.out.print(c.getWeaknesses()[i]);
+            System.out.print(Types.types.get(c.getWeaknesses()[i]));
             if(i < c.getWeaknesses().length-1)System.out.print(" et ");
         }
 

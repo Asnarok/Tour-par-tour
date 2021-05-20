@@ -11,6 +11,11 @@ import java.util.List;
 
 public class IO {
 
+    public static void init() {
+        File dir = new File(System.getProperty("user.dir"));
+        File[] files = dir.listTypes();
+    }
+
     public static List<Character> loadCharacters() {
         
         List<Character> list = new ArrayList<Character>();
@@ -29,8 +34,8 @@ public class IO {
             //variables temporaires, servant au traitement ->
 
             String characterName = "";
-            Type[] types = null;
-            Type[] weaknesses = null;
+            int[] types = null;
+            int[] weaknesses = null;
             Attack[] attacks = new Attack[2];
 
             int attackIndex = 0; //index dans le tableau attacks
@@ -65,7 +70,7 @@ public class IO {
                             String attackName = line.substring(2, line.indexOf(":")); //découpage
                             String attackType = withoutSpaces.substring(withoutSpaces.indexOf(":")+1); //pareil
 
-                            attacks[attackIndex] = new Attack(Type.parseType(attackType), attackName); //conversion du string en Type et création de l'objet temporaire
+                            attacks[attackIndex] = new Attack(Types.addType(attackType), attackName); //conversion du string en Type et création de l'objet temporaire
                             attackIndex++;
 
                             finished = true; //fin du traitement d'un personnage
@@ -74,20 +79,20 @@ public class IO {
                             
                             String[] strings;
 
-                            Type[] pointer; //pointeur tableau
+                            int[] pointer; //pointeur tableau
 
                             if(line.contains("types")) {//si on traite les types, le pointeur renverra à la variable temporaire des types
                                 strings = line.substring(line.indexOf("types:")+6).replaceAll(" ", "").split(","); //suppression des espaces inutiles, et découpage en fonction des virgules
-                                types = new Type[strings.length];
+                                types = new int[strings.length];
                                 pointer = types;
                             }else { //cas contraire
                                 strings = line.substring(line.indexOf("weaknesses:")+11).replaceAll(" ", "").split(","); //suppression des espaces inutiles, et découpage en fonction des virgules
-                                weaknesses = new Type[strings.length];
+                                weaknesses = new int[strings.length];
                                 pointer = weaknesses;
                             }
                                 
                             for(int i = 0; i < strings.length; i++) {
-                                pointer[i] = Type.parseType(strings[i]); //conversion en types et stockage dans le tableau temporaire
+                                pointer[i] = Types.addType(strings[i]); //conversion en types et stockage dans le tableau temporaire
                             }
 
                             }
@@ -102,7 +107,7 @@ public class IO {
             } catch (IOException e) { // exceptions dûes à la lecture / ouverture du fichier
                 e.printStackTrace();
             }
-        
+        System.out.println("Found "+Types.types.size()+" types");
         return list;
     }
     
