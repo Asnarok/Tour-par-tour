@@ -6,10 +6,6 @@ import java.util.List;
 public class Types {
 
     public static List<String> types = new ArrayList<String>();
-    
-    public static int getType(String label) {
-        return types.indexOf(label);
-    }
 
     public static int addType(String label) {
         if(!types.contains(label)){
@@ -17,5 +13,5 @@ public class Types {
             return types.size()-1;
         }else return types.indexOf(label);
     }   
-    
+
 }
