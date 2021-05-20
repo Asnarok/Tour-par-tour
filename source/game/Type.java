@@ -1,6 +1,5 @@
 package game;
 
-
 public enum Type {
     ELECTRIC, COSMOS, INFORMATIC, 
     GEOMETRIC, MATTER, RADIO, 

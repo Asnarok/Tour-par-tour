@@ -8,7 +8,6 @@ public class Game {
 
     public static Character player1, player2;
 
-    
     public static Character playingChar; //joueur en train de jouer
     public static Character idleChar; //joueur inactif
 
@@ -77,9 +76,6 @@ public class Game {
         return true;
             
     }
-    
-    
-       
     
     public static int chooseAttack(Scanner sc) {
         
@@ -152,7 +148,6 @@ public class Game {
         else System.out.println("(Joueur 2) "+s);
     }
 
-
     public static void chooseCharacter(Scanner sc) {
 
         /*
@@ -178,7 +173,6 @@ public class Game {
                 e.printStackTrace();
             }
         }
-
 
         System.out.println("Joueur 1, veuillez sélectionner votre personnage");
         String input;

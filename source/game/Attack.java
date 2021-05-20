@@ -2,7 +2,6 @@ package game;
 
 public class Attack {
 
-
     private String attackName;
     private Type attackType;
 
