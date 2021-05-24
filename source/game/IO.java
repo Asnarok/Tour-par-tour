@@ -8,22 +8,20 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
 
 public class IO {
-    
-    public static FileFilter txtFilter = new FileFilter() {
-        public boolean accept(File file) {
-            return file.getName().endsWith(".txt");
-        }
-    };
 
     public static File selectCharactersFile(Scanner sc) {
+        FileFilter txtFilter = new FileFilter() {
+            public boolean accept(File file) {
+                return file.getName().endsWith(".txt");
+            }
+        };
 
         File dir = new File(System.getProperty("user.dir"));
-        File[] files = dir.listFiles(IO.txtFilter);
+        File[] files = dir.listFiles(txtFilter);
 
 
         System.out.println("Voici la liste de fichiers disponibles pour le chargement du jeu:");
