@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Game {
 
-    public static Character player1, player2;
+    public static Character player1, player2; 
 
     public static Character playingChar; //joueur en train de jouer
     public static Character idleChar; //joueur inactif
@@ -15,8 +15,6 @@ public class Game {
     public static File charactersFile;
 
     public static void main(String[] args){
-
-
 
         Scanner sc = new Scanner(System.in);
 
@@ -51,9 +49,7 @@ public class Game {
     }
 
     public static void takeDamage(Character c, int attackType) {
-
         float damage;
-        
         if(c.isWeakness(attackType)){
             System.out.println("C'est super efficace !");
             damage = randomFloat(20, 30);
@@ -68,25 +64,20 @@ public class Game {
         else c.setHP(0);
         System.out.println("Le " + c.getName() + " ennemi a subi "+ damage + " points de dégâts.");
         System.out.println();
-
     }
 
     public static boolean heal(Character c){
-
         if (c.getHP() < Character.HP_CONST - Character.HEAL_HP){
             c.setHP(c.getHP() + Character.HEAL_HP);
         } else if(c.getHP() < Character.HP_CONST){
             c.setHP(Character.HP_CONST);
         }
-
         println("Votre " + c.getName() + " s'est soigné. Il a maintenant " + c.getHP() + "PV");
         c.decreaseHeals();
-        return true;
-            
+        return true;   
     }
     
     public static int chooseAttack(Scanner sc) {
-        
         println("Choisissez une attaque");
         displayAttacks(playingChar);
         int i = 0;
@@ -127,15 +118,12 @@ public class Game {
             System.out.print(Types.types.get(c.getTypes()[i]));
             if(i < c.getTypes().length-1)System.out.print(" et ");
         }
-
         System.out.print("\n-Faiblesses: ");
         for(int i = 0; i < c.getWeaknesses().length; i++) {
             System.out.print(Types.types.get(c.getWeaknesses()[i]));
             if(i < c.getWeaknesses().length-1)System.out.print(" et ");
         }
-
         System.out.println();
-
         displayAttacks(c);
         System.out.println();
     }
@@ -167,12 +155,14 @@ public class Game {
         
         System.out.println("Liste des personnages: ");
 
+        // temps d'attente pour qu'on ai le temps de lire ce qui s'affiche 
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
 
+        // temps d'attente pour qu'on ai le temps de lire ce qui s'affiche 
         for(Character c : characters){
             displayCharacter(c);
             try {
@@ -195,7 +185,6 @@ public class Game {
             else System.out.println("Vous avez choisi "+ player1.getName());
             System.out.println();
         }
-
         System.out.println("Joueur 2, veuillez sélectionner votre personnage (différent du joueur 1)");
         while(player2 == null || player1 == player2) { //tant que le personnage du joueur 2 n'a pas été défini ou qu'il a choisi le même que le premier
             while((input = sc.nextLine()).length() < 3); //en dessous de 3 caractères, le personnage reconnu par la machine a des chances d'être confondu
@@ -208,7 +197,6 @@ public class Game {
             else System.out.println("Vous avez choisi "+ player2.getName());
             System.out.println();
         }
-
     }
 
     public static float randomFloat(int min, int max) {

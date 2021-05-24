@@ -1,6 +1,6 @@
 Pikachu:
 -types: Electrique
--weaknesses: Sol, 
+-weaknesses: Sol, Feu, Normal
 -attacks:
 --Eclair: Electrique
 --Vive-attaque: Normal
@@ -35,7 +35,7 @@ Roucool:
 
 Taupiqueur:
 -types: Sol
--weaknesses: PLante, Eau, Normal
+-weaknesses: Plante, Eau, Normal
 -attacks:
 --Coud'boue: Sol
 --Griffe: Normal
