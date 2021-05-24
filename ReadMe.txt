@@ -23,8 +23,9 @@ Créer un fichier texte et repscter le formatage suivant :
 --[Nom de l'attaque]: [Type de l'attaque]
 --[Nom de l'attaque]: [Type de l'attaque]
 
-Placer ensuite ce fichier texte ............
+Placer ensuite ce fichier texte dans le dossier Tour-par-tour.
 
 Pour jouer : 
-Compiler et executer la classe Game puis suivre les instructions du terminal. 
+*Ouvir la classe Game sous VSC puis l'executer et suivre les instructions du terminal. 
+
 
