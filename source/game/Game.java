@@ -18,16 +18,16 @@ public class Game {
 
         Scanner sc = new Scanner(System.in);
 
-        charactersFile = IO.selectCharactersFile(sc);
         
         boolean validFile = false;
+        
         while(!validFile) {
             try {
+                charactersFile = IO.selectCharactersFile(sc);
                 chooseCharacter(sc);
                 validFile = true;
             } catch (Exception e) {
                 System.out.println("Impossible de charger ce fichier, il n'est pas valide.");
-                charactersFile = IO.selectCharactersFile(sc);
             }
         }
 
