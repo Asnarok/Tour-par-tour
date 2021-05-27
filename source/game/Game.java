@@ -46,6 +46,12 @@ public class Game {
                 heal(playingChar);
             }
         }
+        if(player1.isAlive()) {
+            System.out.println("Bravo joueur 1 vous avez gagné à l'aide de votre " + player1.getName() +".\nQuel fin stratège :)");
+
+        }else {
+            System.out.println("Bravo joueur 2 vous avez gagné à l'aide de votre " + player2.getName() +".\nQuel fin stratège :)");
+        }
     }
 
     public static void takeDamage(Character c, int attackType) {
@@ -129,13 +135,17 @@ public class Game {
     }
 
     public static void displayHP(Character c) {
-        System.out.print("Votre " + c.getName() + " a encore " + c.getHP() + " / "+ Character.HP_CONST+ " PV [");
-        int bar = (int)(Math.round(c.getHP()/10));
-        for(int i = 0; i < 10; i++) {
-            if(i < bar)System.out.print("■");
-            else System.out.print("□");
+        if(c.isAlive()) {
+            System.out.print("Votre " + c.getName() + " a encore " + c.getHP() + " / "+ Character.HP_CONST+ " PV [");
+            int bar = (int)(Math.round(c.getHP()/10));
+            for(int i = 0; i < 10; i++) {
+                if(i < bar)System.out.print("■");
+                else System.out.print("□");
+            }
+            System.out.println("] et il lui reste " + c.getHeals() + " potion.s de soins");
+        }else {
+            System.out.println("Votre "+ c.getName() + " est K.O.");
         }
-        System.out.println("] et il lui reste " + c.getHeals() + " potion.s de soins");
         System.out.println();
     }
 
@@ -193,7 +203,7 @@ public class Game {
             for(Character c : characters) {
                 if(c.getName().toLowerCase().contains(input))player2 = c; //si le nom d'un personnage contient ce que le joueur a écrit, alors c'est le bon
             }
-            if(player1 == null || player2 == player1)System.out.println("Veuillez donner un nom de personnage valide");
+            if(player2 == null || player2 == player1)System.out.println("Veuillez donner un nom de personnage valide");
             else System.out.println("Vous avez choisi "+ player2.getName());
             System.out.println();
         }
