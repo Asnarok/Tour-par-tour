@@ -20,7 +20,16 @@ public class Game {
 
         charactersFile = IO.selectCharactersFile(sc);
         
-        chooseCharacter(sc);
+        boolean validFile = false;
+        while(!validFile) {
+            try {
+                chooseCharacter(sc);
+                validFile = true;
+            } catch (Exception e) {
+                System.out.println("Impossible de charger ce fichier, il n'est pas valide.");
+                charactersFile = IO.selectCharactersFile(sc);
+            }
+        }
 
         playingChar = player2; //comme on inverse au début de chaque round, le joueur 1 commencera en 1er
         idleChar = player1;
@@ -154,7 +163,7 @@ public class Game {
         else System.out.println("(Joueur 2) "+s);
     }
 
-    public static void chooseCharacter(Scanner sc) {
+    public static void chooseCharacter(Scanner sc) throws Exception {
 
         /*
          * Pour choisir son personnage, le joueur écrira le nom de son choix, et le programme reconnaîtra le personnage

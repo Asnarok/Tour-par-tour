@@ -47,7 +47,7 @@ public class IO {
 
     }
 
-    public static List<Character> loadCharacters(File f) {
+    public static List<Character> loadCharacters(File f) throws Exception {
         
         List<Character> list = new ArrayList<Character>();
 
