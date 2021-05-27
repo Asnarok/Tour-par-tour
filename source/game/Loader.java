@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class IO {
+public class Loader {
 
     public static File selectCharactersFile(Scanner sc) {
         FileFilter txtFilter = new FileFilter() {

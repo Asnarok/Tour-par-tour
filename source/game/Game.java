@@ -23,7 +23,7 @@ public class Game {
         
         while(!validFile) {
             try {
-                charactersFile = IO.selectCharactersFile(sc);
+                charactersFile = Loader.selectCharactersFile(sc);
                 chooseCharacter(sc);
                 validFile = true;
             } catch (Exception e) {
@@ -170,7 +170,7 @@ public class Game {
          * correspondant
          */
 
-        List<Character> characters = IO.loadCharacters(charactersFile);
+        List<Character> characters = Loader.loadCharacters(charactersFile);
         
         System.out.println("Liste des personnages: ");
 
