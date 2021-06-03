@@ -105,6 +105,7 @@ public class Game {
             if(i < 1 || i > 3) println("Attaque invalide.");
         }
         i--;
+        System.out.println();
         if(i < 2)println(playingChar.getName()+" attaque "+ playingChar.getAttacks()[i].getAttackName()+" !");
         else {
             if(playingChar.getHeals() == 0) {
